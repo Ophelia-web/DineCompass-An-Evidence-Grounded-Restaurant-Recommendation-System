@@ -14,38 +14,38 @@ A runnable LLM + RAG + VLM demo that accepts dining preferences and returns tran
 ## Folder tree
 
 ```text
-project/
-  app/
-    main.py
-    routes/
-      search.py
-    services/
-      geocode_zip.py
-      places_retriever.py
-      review_rag.py
-      review_analyzer.py
-      photo_fetcher.py
-      image_analyzer.py
-      dossier_generator.py
-      ranker.py
-      report_writer.py
-      llm_client.py
-    models/
-      schemas.py
-    prompts/
-      review_prompt.txt
-      dossier_prompt.txt
-      image_prompt.txt
-    templates/
-      index.html
-    static/
-      app.js
-      styles.css
-  output/
-    dossiers/
-  requirements.txt
-  .env.example
-  README.md
+app/
+  main.py
+  models/
+    schemas.py
+  prompts/
+    dossier_prompt.txt
+    image_prompt.txt
+    review_prompt.txt
+  routes/
+    search.py
+  services/
+    dossier_generator.py
+    geocode_zip.py
+    image_analyzer.py
+    llm_client.py
+    photo_fetcher.py
+    places_retriever.py
+    ranker.py
+    report_writer.py
+    review_analyzer.py
+    review_rag.py
+  static/
+    app.js
+    styles.css
+  templates/
+    index.html
+
+scripts/
+  test_vlm_image.py
+
+README.md
+requirements.txt
 ```
 
 ## Installation
