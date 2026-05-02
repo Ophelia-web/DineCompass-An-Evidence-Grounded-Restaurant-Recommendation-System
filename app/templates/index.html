@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DineCompass · Personalized Dining Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="hero card">
+        <div class="hero-content">
+          <p class="eyebrow">DINECOMPASS · PERSONALIZED DINING GUIDE</p>
+          <h1>Find restaurants that fit your plans.</h1>
+          <p class="subtitle">
+            DineCompass helps you discover nearby restaurants based on cuisine, budget, party size, and
+            vibe — with recommendations supported by reviews, real photos, and clear reasoning.
+          </p>
+          <ul class="feature-list">
+            <li>Review-based insights</li>
+            <li>Evidence-backed picks</li>
+            <li>Photo-based vibe cues</li>
+          </ul>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <figure class="hero-image hero-image-main">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1100&q=78" alt="" />
+          </figure>
+          <figure class="hero-image hero-image-top">
+            <img src="https://images.unsplash.com/photo-1515669097368-22e68427d265?auto=format&fit=crop&w=900&q=78" alt="" />
+          </figure>
+          <figure class="hero-image hero-image-bottom">
+            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=900&q=78" alt="" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="search-panel card">
+        <form id="search-form" class="search-form">
+          <details id="advanced-settings" class="advanced-settings">
+            <summary>Advanced settings</summary>
+            <p class="hint">API keys are stored locally in your browser.</p>
+            <div class="advanced-grid">
+              <label class="advanced-label">
+                Google Maps API Key
+                <input
+                  type="password"
+                  name="googleMapsApiKey"
+                  placeholder="Paste your Google Maps API key"
+                  autocomplete="off"
+                />
+              </label>
+              <label class="advanced-label">
+                Gemini API Key
+                <input
+                  type="password"
+                  name="geminiApiKey"
+                  placeholder="Paste your Gemini API key"
+                  autocomplete="off"
+                />
+              </label>
+            </div>
+          </details>
+
+          <div class="input-grid">
+            <label>
+              <span class="label-title">Where are you?</span>
+              <input type="text" name="zipCode" placeholder="e.g. 10025" required />
+            </label>
+
+            <label>
+              <span class="label-title">What are you craving?</span>
+              <input type="text" name="cuisine" placeholder="e.g. Sushi" required />
+            </label>
+
+            <label>
+              <span class="label-title">Number of people</span>
+              <input type="number" name="partySize" min="1" max="20" value="2" required />
+            </label>
+
+            <label>
+              <span class="label-title">Budget range</span>
+              <select name="budget" required>
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+                <option value="luxury">Luxury</option>
+              </select>
+            </label>
+          </div>
+
+          <button type="submit" class="submit-btn">Find restaurants</button>
+        </form>
+      </section>
+
+      <section class="results-section">
+        <p class="results-title">Recommendations</p>
+        <div id="status" class="status" aria-live="polite"></div>
+        <div id="results" class="results"></div>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
