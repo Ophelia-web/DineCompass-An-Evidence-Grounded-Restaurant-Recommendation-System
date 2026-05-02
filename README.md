@@ -1,4 +1,4 @@
-# Multimodal-Dining-Intelligence-Decision-Engine
+# DineCompass: An Evidence-Grounded Restaurant Recommendation System
 
 A runnable LLM + RAG + VLM demo that accepts dining preferences and returns transparent Top-3 recommendations with evidence.
 
