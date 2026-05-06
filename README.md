@@ -214,7 +214,7 @@ What it does:
 - sends the image as Gemini `inline_data` (base64)
 - prints parsed JSON output from VLM analysis
 
-## Class demo script (quick talk track)
+## Demo
 
 1. Enter ZIP, cuisine, party size, and budget.
 2. Show that results include evidence-backed rationale, not only ratings.
