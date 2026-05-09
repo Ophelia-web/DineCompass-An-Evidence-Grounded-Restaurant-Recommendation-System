@@ -46,10 +46,11 @@ scripts/
 
 user_study/
   Restaurant Recommendation Web App Feedback Survey (Responses).xlsx
-  
+  Stat 5293 survey analyze.ipynb
 
 README.md
 requirements.txt
+5293 DineCompass - report.pdf
 ```
 
 ## Installation
