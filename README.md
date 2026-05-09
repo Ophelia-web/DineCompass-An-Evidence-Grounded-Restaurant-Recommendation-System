@@ -57,14 +57,14 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Environment variables
+## API keys
 
-The frontend sends API keys in each request. The backend sets them in process env for service clients:
+The app accepts API keys from the browser form and sends them with each search request.
 
-- `GOOGLE_MAPS_API_KEY` (used for photo URL generation in the pipeline)
-- `GEMINI_API_KEY` (used by text and multimodal Gemini calls)
+- `googleMapsApiKey`: used for Google Places retrieval and photo URL generation
+- `geminiApiKey`: used for Gemini text and multimodal analysis
 
-You can still run local testing by entering both keys in the UI Advanced Settings.
+The backend uses these keys only during request processing. The response does not return the keys.
 
 ## Run locally
 
@@ -75,26 +75,7 @@ uvicorn app.main:app --reload --port 8000
 
 Open: `http://localhost:8000`
 
-Health: `GET /health`
-
-## Isolated VLM test helper
-
-Use this script to test VLM on one restaurant photo URL before running full search:
-
-```bash
-cd project
-export GEMINI_API_KEY="AIza..."
-python3 scripts/test_vlm_image.py \
-  --restaurant "Demo Bistro" \
-  --cuisine "italian" \
-  --image-url "https://maps.googleapis.com/maps/api/place/photo?..."
-```
-
-Optional log level:
-
-```bash
-python3 scripts/test_vlm_image.py ... --log-level DEBUG
-```
+Health check: `GET /health`
 
 ## Request/response shape
 
@@ -102,8 +83,8 @@ python3 scripts/test_vlm_image.py ... --log-level DEBUG
 
 ```json
 {
-  "googleMapsApiKey": "AIza...",
-  "geminiApiKey": "AIza...",
+  "googleMapsApiKey": "YOUR_GOOGLE_MAPS_API_KEY",
+  "geminiApiKey": "YOUR_GEMINI_API_KEY",
   "zipCode": "94103",
   "cuisine": "japanese",
   "partySize": 4,
@@ -111,8 +92,8 @@ python3 scripts/test_vlm_image.py ... --log-level DEBUG
 }
 ```
 
-> API keys are supplied by the end user in the browser form and sent per request.
-> The backend response does not include these keys.
+> API keys are supplied through the browser form and sent with each request.
+> They are used for API calls only and are not included in the backend response.
 
 ### Response (truncated)
 
@@ -203,7 +184,7 @@ Use the helper script to validate image analysis on one image before a full sear
 ```bash
 cd project
 python3 scripts/test_vlm_image.py \
-  --gemini-key "YOUR_GEMINI_KEY" \
+  --gemini-key "YOUR_GEMINI_API_KEY" \
   --name "Test Restaurant" \
   --cuisine "japanese" \
   --image-url "https://maps.googleapis.com/maps/api/place/photo?..."
