@@ -44,6 +44,10 @@ app/
 scripts/
   test_vlm_image.py
 
+user_study/
+  Restaurant Recommendation Web App Feedback Survey (Responses).xlsx
+  
+
 README.md
 requirements.txt
 ```
