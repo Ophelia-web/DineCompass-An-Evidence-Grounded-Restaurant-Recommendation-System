@@ -48,6 +48,10 @@ user_study/
   Restaurant Recommendation Web App Feedback Survey (Responses).xlsx
   Stat 5293 survey analyze.ipynb
 
+docs/
+  AI_USAGE.md
+  GENAI_PROMPTS.md
+
 README.md
 requirements.txt
 5293 DineCompass - report.pdf
