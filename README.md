@@ -41,13 +41,13 @@ app/
   templates/
     index.html
 
+scripts/
+  test_vlm_image.py
+
 tests/
   test_api_health.py
   test_models_fallback.py
   test_error_handling_readme.py
-
-scripts/
-  test_vlm_image.py
 
 user_study/
   Restaurant Recommendation Web App Feedback Survey (Responses).xlsx
