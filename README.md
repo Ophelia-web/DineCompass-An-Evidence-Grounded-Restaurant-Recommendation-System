@@ -219,6 +219,56 @@ What it does:
 5. Open **Score Breakdown** to explain transparent ranking logic.
 6. Mention fallback behavior for missing reviews/photos and module failures.
 
+## Troubleshooting Guide
+
+### 1. The app starts but search returns no restaurants
+Possible causes:
+- The Google Maps API key is missing or invalid.
+- The ZIP code has limited restaurant results.
+- The Google Places API quota has been exceeded.
+
+Suggested fix:
+- Check that the Google Maps API key is active.
+- Try a dense ZIP code such as `10018`, `10025`, or `10027`.
+- Check Google Cloud API quota and billing settings.
+
+### 2. Gemini returns an invalid or unexpected format
+Possible causes:
+- Gemini model output may vary.
+- The response may not follow the expected JSON structure.
+
+Suggested fix:
+- The app uses fallback values when Gemini output cannot be parsed.
+- Check the prompt files in `app/prompts/`.
+- Re-run the same query or try a simpler cuisine/preference input.
+
+### 3. No review evidence appears
+Possible causes:
+- Google Places returned few or no reviews.
+- The lightweight RAG step did not find strong keyword matches.
+
+Suggested fix:
+- Try another restaurant-dense ZIP code.
+- Use broader cuisine terms such as `Italian`, `Korean`, or `Japanese`.
+
+### 4. No image analysis appears
+Possible causes:
+- The restaurant has no available photos.
+- The photo URL could not be retrieved.
+- Gemini VLM request failed.
+
+Suggested fix:
+- The app will continue with fallback image-analysis values.
+- Use `scripts/test_vlm_image.py` to test one image URL separately.
+
+### 5. Tests do not run
+Suggested fix:
+Run from the root project folder:
+
+```bash
+pip install -r requirements.txt
+pytest -v
+
 ## Notes
 
 - Async `httpx` calls are used for external APIs.
