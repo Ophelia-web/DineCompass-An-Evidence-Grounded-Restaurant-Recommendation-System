@@ -55,6 +55,7 @@ docs/
 README.md
 requirements.txt
 5293 DineCompass - report.pdf
+stat5293demo
 ```
 
 ## Installation
