@@ -41,6 +41,11 @@ app/
   templates/
     index.html
 
+tests/
+  test_api_health.py
+  test_models_fallback.py
+  test_error_handling_readme.py
+
 scripts/
   test_vlm_image.py
 
