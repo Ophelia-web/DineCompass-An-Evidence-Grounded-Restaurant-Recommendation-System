@@ -219,6 +219,11 @@ What it does:
 5. Open **Score Breakdown** to explain transparent ranking logic.
 6. Mention fallback behavior for missing reviews/photos and module failures.
 
+<video width="600" controls>
+  <source src="stat5293_demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ## Troubleshooting Guide
 
 ### 1. The app starts but search returns no restaurants
