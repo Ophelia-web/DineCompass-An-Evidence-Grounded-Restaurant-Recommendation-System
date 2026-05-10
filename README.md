@@ -219,10 +219,9 @@ What it does:
 5. Open **Score Breakdown** to explain transparent ranking logic.
 6. Mention fallback behavior for missing reviews/photos and module failures.
 
-<video width="600" controls>
-  <source src="stat5293_demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+Watch the DineCompass demo:
+
+[![DineCompass Demo](https://img.youtube.com/vi/fwkH0Tm61C4/0.jpg)](https://youtu.be/fwkH0Tm61C4)
 
 ## Troubleshooting Guide
 
